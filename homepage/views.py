@@ -17,26 +17,3 @@ def homepage(request):
                'project': project,
                }
     return render(request, 'homepage/homepage.html', content)
-
-
-def experience(request):
-    try:
-        experience = Experience.objects.get(id=1)
-    except Experience.DoesNotExist:
-        raise HttpResponse('homepage/404.html')
-    return render(request, 'homepage/experience.html', {'experience': experience})
-
-
-def project(request):
-    project = Project.objects.get(id=1)
-    return render(request, 'homepage/projects.html', {'project': project})
-
-
-def notFound(request):
-    return render(request, '404.html')
-
-
-def skill(request):
-    skill = Skill.objects.order_by('skill_val')[:]
-
-    return render(request, 'homepage/skill.html', {'skill': skill})

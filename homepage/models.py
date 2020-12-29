@@ -55,9 +55,9 @@ class Skill(models.Model):
 
 class About(models.Model):
     user = models.ForeignKey(Admin, on_delete=models.CASCADE)
-    aboutHeader = models.CharField(max_length=255)
-    aboutItalic = models.CharField(max_length=255)
-    aboutPara = models.CharField(max_length=255)
+    aboutHeader = models.TextField(max_length=255)
+    aboutItalic = models.TextField(max_length=255)
+    aboutPara = models.TextField(max_length=255)
 
     def __str__(self):
-        return f"About"
+        return f"About {user}"
