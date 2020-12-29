@@ -60,4 +60,4 @@ class About(models.Model):
     aboutPara = models.TextField(max_length=255)
 
     def __str__(self):
-        return f"About {user}"
+        return f"About User"
